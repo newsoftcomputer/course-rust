@@ -9,3 +9,9 @@
             // Call println! with three arguments: a string, a value, a value
             println!("The first letter of the English alphabet is {} and the last letter is {}.", 'A', 'Z');
         }
+
+    Llamamos a la macro println! con tres argumentos: una cadena, un valor y otro valor. La macro procesa los argumentos por orden. Cada instancia de llaves {} dentro de una cadena de texto se reemplaza por el valor del argumento siguiente de la lista.
+
+    La salida es la siguiente:
+
+        The first letter of the English alphabet is A and the last letter is Z.

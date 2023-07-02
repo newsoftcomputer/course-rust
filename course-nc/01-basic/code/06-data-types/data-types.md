@@ -115,7 +115,9 @@
         let lowercase_f = 'f';
         let smiley_face = '😃';
 
-## &str
+
+
+## Cadenas de texto
 
     - El tipo str, también conocido como segmento de cadena, es una vista de los datos de la cadena. La mayoría de las veces, se hace referencia a estos tipos usando la sintaxis del estilo de referencia que precede al tipo con el símbolo de y comercial &str. Trataremos las referencias en los siguientes módulos. Por ahora, puede imaginarse &str como un puntero a datos de cadena inmutables. Los literales de cadena son todos de tipo &str.
 
@@ -123,4 +125,22 @@
 
     En estos escenarios, Rust tiene un segundo tipo de cadena denominado String. Este tipo se asigna en el montón. Cuando se usa el tipo String, no es necesario conocer la longitud de la cadena (número de caracteres) antes de compilar el código.
 
-## String
+    - Si está familiarizado con un lenguaje de recolección de elementos no utilizados, es posible que se pregunte por qué Rust tiene dos tipos de cadena. 1 Las cadenas son tipos de datos extremadamente complejos. La mayoría de los lenguajes usan sus recolectores de elementos no utilizados para atenuar esta complejidad. Rust, como lenguaje de un sistema, expone parte de la complejidad inherente de las cadenas. La complejidad adicional conlleva una cantidad de control muy específica sobre cómo se usa la memoria en el programa.
+
+    1 _En realidad, Rust tiene más de dos tipos de cadena. En este módulo, solo se describen los tipos String y &str. Puede obtener más información sobre los tipos de cadena que se ofrecen en la documentación de Rust.
+
+
+### &str
+
+    - 
+
+    Examples:
+
+        // Compiler interprets a series of items in quotations as a "str" data type and creates a "&str" reference
+        let string_1 = "miley ";
+
+        // Specify the data type "str" with the reference syntax "&str"
+        let string_2: &str = "ace";
+
+
+### String

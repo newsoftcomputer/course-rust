@@ -1,0 +1,1 @@
+/home/andres/NC/NEWSOFT-COMPUTER/COURSES/course-rust/course-nc/01-basic/examples/hello-world-cargo/target/debug/hello-world-cargo: /home/andres/NC/NEWSOFT-COMPUTER/COURSES/course-rust/course-nc/01-basic/examples/hello-world-cargo/src/main.rs

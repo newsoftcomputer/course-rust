@@ -1,5 +1,4 @@
 
-
 fn main() {
     // Declare a tuple of three elements
     let tuple_e = ('E', 5i32, true);

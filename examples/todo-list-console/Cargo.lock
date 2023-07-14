@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "todo-list"
+name = "todo-list-console"
 version = "0.1.0"

@@ -1,10 +1,11 @@
 
 use std::{
     io,
-    io::{ BufRead, Error },
+    io::{ BufRead, Error, Read },
     fs::{ OpenOptions }
 };
 
+#[derive(Debug)]
 struct Todo {
     task: String,
     done: bool
@@ -17,6 +18,10 @@ impl Todo {
 }
 
 fn main() {
+
+    let todo: Vec<Todo> = all_todo().expect("Ha ocurrido un error al obtener la lista de tareas");
+    println!("Tareas: {:?}", todo);
+
     loop {
         let mut action = String::new();
         let mut task = String::new();
@@ -54,11 +59,23 @@ fn create_todo(task: String, done: bool) {
 }
 
 fn all_todo() -> Result<Vec<Todo>, Error> {
-    let mut file = OpenOptions::new();
+    let mut file = OpenOptions::new()
                                     .write(true)
                                     .create(true)
                                     .read(true)
                                     .open("todo.txt")
-                                    .expect("Error al intentar abrir el archivo")
+                                    .expect("Error al intentar abrir el archivo");
+    let mut body = String::new();
+    file.read_to_string(&mut body).expect("Error al intentar leer el archivo");
+    let mut list = Vec<Todo> = Vec::new();
 
+    for line in body.lines() {
+        // Task:false
+        let task = line.split(':').collect()::<Vec<$str>>();
+        list.push(
+            Todo::create(task[0].to_string(), task[1].parse().unwrap())
+        );
+    }
+
+    Ok(list)
 }

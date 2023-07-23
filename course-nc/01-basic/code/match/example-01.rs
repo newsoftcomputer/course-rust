@@ -1,6 +1,6 @@
 
 fn main() {
-    let x = 1;
+    let x = 5;
 
     match x {
         0 => println!("Zero"),
@@ -13,5 +13,6 @@ fn main() {
         7 => println!("Seven"),
         8 => println!("Eight"),
         9 => println!("Nine"),
+        _ => println!("No Found")
     }
 }

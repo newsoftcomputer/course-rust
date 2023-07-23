@@ -5,7 +5,7 @@
 struct Usuario {
     user: String,
     email: String,
-    time_ctive: u64,
+    time_active: u64,
     active: bool
 }
 
@@ -13,7 +13,7 @@ fn main() {
     let user1 = Usuario{
         email: String::from("andresganc@gmail.com"),
         user: String::from("andresganc"),
-        time_ctive: 1,
+        time_active: 1,
         active: true
     };
 

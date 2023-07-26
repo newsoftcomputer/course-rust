@@ -16,9 +16,9 @@
         // An enum variant can be like a classic struct with named fields and their data types
         WEClick { x: i64, y: i64 }
 
-    - La enumeración de nuestro ejemplo tiene tres variantes de tipos diferentes:
+        - La enumeración de nuestro ejemplo tiene tres variantes de tipos diferentes:
 
-    WELoad no tiene ningún tipo de datos o datos asociados.
-    WEKeys tiene dos campos, con tipos de datos String y char.
-    WEMClick incluye una estructura anónima con campos con nombre x y y, y sus tipos de datos (i64).
+        WELoad no tiene ningún tipo de datos o datos asociados.
+        WEKeys tiene dos campos, con tipos de datos String y char.
+        WEMClick incluye una estructura anónima con campos con nombre x y y, y sus tipos de datos (i64).
 }

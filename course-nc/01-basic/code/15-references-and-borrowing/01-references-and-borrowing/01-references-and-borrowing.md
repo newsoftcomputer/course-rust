@@ -22,3 +22,5 @@
     }
 
     - First, notice that all the tuple code in the variable declaration and the function return value is gone. Second, note that we pass &s1 into calculate_length and, in its definition, we take &String rather than String. These ampersands represent references, and they allow you to refer to some value without taking ownership of it. Figure 4-5 depicts this concept.
+
+<img src="./references-borrowing-01.svg" with="250px">

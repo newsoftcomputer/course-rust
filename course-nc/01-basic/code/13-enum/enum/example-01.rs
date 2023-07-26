@@ -9,5 +9,6 @@ fn main() {
         WEClick { x: i64, y: i64 }
     }
 
-    
+    let we_load = WebEvent::WELoad(true);
+    println!("Web Load: {:?}", we_load);
 }

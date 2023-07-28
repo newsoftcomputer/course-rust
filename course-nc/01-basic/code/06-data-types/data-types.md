@@ -144,3 +144,5 @@
 
 
 ### String
+
+    - The String

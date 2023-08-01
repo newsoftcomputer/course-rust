@@ -1,5 +1,0 @@
-
-# HASHMAP - ENTRY
-
-    - Hashmap Entry 
-

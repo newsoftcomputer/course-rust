@@ -1,4 +1,0 @@
-
-    - Update rust
-
-        $ rustup update

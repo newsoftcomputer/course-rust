@@ -1,0 +1,1 @@
+/home/andres/NC/NEWSOFT-COMPUTER/COURSES/course-rust/courses/03-the-book/02-programming-a-guessing-game/guessing-game-language/target/debug/guessing-game-language: /home/andres/NC/NEWSOFT-COMPUTER/COURSES/course-rust/courses/03-the-book/02-programming-a-guessing-game/guessing-game-language/src/main.rs

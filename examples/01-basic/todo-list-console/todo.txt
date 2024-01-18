@@ -1,2 +1,4 @@
 Learn Rust:false
 Learn English:false
+Learn Typescript:false
+Learn Javascript:false

@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 ansi_rgb = "0.2.0"
+rgb = "0.8.37"

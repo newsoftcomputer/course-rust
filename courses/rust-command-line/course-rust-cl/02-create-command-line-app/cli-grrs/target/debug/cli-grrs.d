@@ -1,0 +1,1 @@
+/home/andres/NC/NEWSOFT-COMPUTER/COURSES/course-rust/courses/rust-command-line/course-rust-cl/02-create-command-line-app/cli-grrs/target/debug/cli-grrs: /home/andres/NC/NEWSOFT-COMPUTER/COURSES/course-rust/courses/rust-command-line/course-rust-cl/02-create-command-line-app/cli-grrs/src/main.rs

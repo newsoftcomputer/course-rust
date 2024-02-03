@@ -7,7 +7,6 @@ use rgb::RGB8;
 
 fn main() {
 
-
     println!("{}", "OPTION LIST".fg(green()));
     println!("1-English");
     println!("2-Spanish");
@@ -18,7 +17,6 @@ fn main() {
 
         let stdin = io::stdin();
 
-        
         let action = stdin.lock().lines().next().unwrap().unwrap();
 
         if action == "0" {

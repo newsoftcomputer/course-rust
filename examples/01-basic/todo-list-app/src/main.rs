@@ -36,28 +36,29 @@ fn main() {
 	loop {
 		let stdin = io::stdin();
 
-        // println!("Acciones disponibles:");
-        // println!("1-Mostrar");
-        // println!("2-Crear");
-        // println!("3-Completar");
-        // println!("4-Eliminar");
+        println!("Acciones disponibles:");
+        println!("1-Mostrar tasks");
+        println!("2-Crear task");
+        println!("3-Completar task");
+        println!("4-Eliminar task");
+		println!("0-Salir");
 
 		println!("Qué acciónn deseas realizar?");
 		let action = stdin.lock().lines().next().unwrap().unwrap();
 
-		if action == "break" {
+		if action == "0" {
 			break
 		};
 
-		// println!("Ingresa el nombre de la tarea");
+		println!("Ingresa el nombre de la tarea");
 		let task = stdin.lock().lines().next().unwrap().unwrap();
 		
 		match action.as_ref() {
-			"show" => show_todo(&mut todo, task),
+			"1" => show_todo(&mut todo, task),
 			"2" => create_todo(&mut todo, task),
-			"complete" => complete_todo(&mut todo, task),
-			"delete" => delete_todo(&mut todo, task),
-			_ => println!("La opci?????�n es invalida :(")
+			"3" => complete_todo(&mut todo, task),
+			"4" => delete_todo(&mut todo, task),
+			_ => println!("La opcion es invalida :(")
 		}
 	}
 }

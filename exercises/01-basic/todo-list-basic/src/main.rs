@@ -2,36 +2,47 @@
 use std::io;
 use std::io::BufRead;
 
+
+
+
 fn main() {
 
-    println!("TODO LIST BASIC");
-    println!("New Task");
-    println!("Show Task");
+    let mut vector: Vec<String> = vec![String::new(); 126];
 
     loop {
-        
-        let stdin = io::stdin();
 
+        println!("TODO LIST BASIC");
+        println!("1: Show Task");
+        println!("2: New Task");
+        println!("0: Exit");
+        println!("Select a option:");
+
+        let stdin = io::stdin();
         let action = stdin.lock().lines().next().unwrap().unwrap();
+        println!("Selected: {}", action);
 
         if action == "0" {
             break
-        }
+        };
 
-        println!("Value: {}", action)
+        match action.as_ref() {
+            "1" => show_tasks(),
+            "2" => new_task(),
+            _ => println!("Invalid option")
+        }
 
     }
 
 }
 
 
-fn showTasks() {
+fn show_tasks() {
 
-    println!("Show task"); 
+    println!("Showed task"); 
 
 }
 
-fn addTask() {
+fn new_task() {
     
     println!("Added Task");
 

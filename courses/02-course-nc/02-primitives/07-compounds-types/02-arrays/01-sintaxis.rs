@@ -23,5 +23,12 @@ fn main() {
     
     let first = d[0];
     let second = d[1];
+
+    // Declaracion 06
+    /// Inicializar un array de cadenas con valores vacíos: 
+    /// Puedes crear un array de cadenas con un tamaño fijo y llenarlo con cadenas vacías. Por ejemplo:
+    const EMPTY_STRING: String = String::new();
+    let mut array: [String; 126] = [EMPTY_STRING; 126];
+
     
 }

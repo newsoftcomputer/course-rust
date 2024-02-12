@@ -1,11 +1,12 @@
 
 use std::io;
 use std::io::BufRead;
+use std::io::Write;
 
 
 fn main() {
 
-    let mut tasks: Vec<String> = vec![String::new(); 0];
+    
 
     println!("TODO LIST ADVANCED");
     println!("1: English");
@@ -35,6 +36,8 @@ fn main() {
 
 fn english_language() {
 
+    let mut tasks: Vec<String> = vec![String::new(); 0];
+
     println!("English language seleted");
 
     loop {
@@ -52,10 +55,10 @@ fn english_language() {
         println!("Selected: {}", action);
 
         match action.as_ref() {
-            "1" => list_tasks_english(),
-            "2" => add_task_english(),
+            "1" => list_tasks_english(&tasks),
+            "2" => add_task_english(&mut tasks),
             "3" => edit_task_english(),
-            "4" => remove_task_english(),
+            "4" => remove_task_english(&mut tasks),
             "0" => main(),
             _ => println!("Invalid option: {}", action)
         }
@@ -64,15 +67,29 @@ fn english_language() {
 
 }
 
-fn list_tasks_english() {
+fn list_tasks_english(tasks: &Vec<String>) {
+
+    for task in tasks {
+        println!(" - {}", task);
+    }
 
     println!("List Tasks");
 
 }
 
-fn add_task_english() {
+fn add_task_english(tasks: &mut Vec<String>) {
 
-    println!("Add Task");
+    let mut input = String::new();
+
+    print!("Enter task: ");
+    io::stdout().flush().unwrap();
+
+    io::stdin().read_line(&mut input).unwrap();
+    let task = input.trim().to_string();
+    
+    tasks.push(task);
+    
+    println!("Added Task");
 
 }
 
@@ -82,9 +99,23 @@ fn edit_task_english() {
 
 }
 
-fn remove_task_english() {
+fn remove_task_english(tasks: &mut Vec<String>) {
 
-    println!("Remove Task");
+    let mut input = String::new();
+
+    print!("Enter task index to remove: ");
+    io::stdout().flush().unwrap();
+
+    io::stdin().read_line(&mut input).unwrap();
+
+    let index = input.trim().parse::<usize>().unwrap();
+
+    if index >= tasks.len() {
+        println!("Invalid task index");
+    } else {
+        tasks.remove(index);
+        println!("Removed Task");
+    }   
 
 }
 

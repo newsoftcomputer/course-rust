@@ -6,8 +6,6 @@ use std::io::Write;
 
 fn main() {
 
-    
-
     println!("TODO LIST ADVANCED");
     println!("1: English");
     println!("2: Spanish");
@@ -123,6 +121,8 @@ fn remove_task_english(tasks: &mut Vec<String>) {
 /* TODO LIST ADVANCED - SPANISH */
 fn spanish_language() {
 
+    let mut tasks: Vec<String> = vec![String::new(); 0];
+
     println!("Seleccionado el lenguaje español");
 
     loop {
@@ -140,10 +140,10 @@ fn spanish_language() {
         println!("Opcion seleccionada: {}", action);
 
         match action.as_ref() {
-            "1" => list_tasks_spanish(),
-            "2" => add_task_spanish(),
-            "3" => edit_task_spanish(),
-            "4" => remove_task_spanish(),
+            "1" => list_tasks_spanish(&tasks),
+            "2" => add_task_spanish(&mut tasks),
+            "3" => edit_task_spanish(&mut tasks),
+            "4" => remove_task_spanish(&mut tasks),
             "0" => main(),
             _ => println!("Opcion invalida") 
         }
@@ -152,27 +152,56 @@ fn spanish_language() {
 
 }
 
-fn list_tasks_spanish() {
+fn list_tasks_spanish(tasks: &Vec<String>) {
 
-    println!("Listar tareas");
+    for task in tasks {
+        println!(" - {}", task);
+    }
 
-}
-
-fn add_task_spanish() {
-
-    println!("Agregar tarea");
+    println!("Tareas listadas");
 
 }
 
-fn edit_task_spanish() {
+fn add_task_spanish(tasks: &mut Vec<String>) {
+
+    let mut input = String::new();
+
+    print!("Ingrese la tarea : ");
+    io::stdout().flush().unwrap();
+
+    io::stdin().read_line(&mut input).unwrap();
+
+    let task = input.trim().to_string();
+
+    tasks.push(task);
+
+    println!("Tarea agregada correctamente");
+
+}
+
+fn edit_task_spanish(tasks: &mut Vec<String>) {
 
     println!("Editar tarea");
 
 }
 
-fn remove_task_spanish() {
+fn remove_task_spanish(tasks: &mut Vec<String>) {
 
-    println!("Eliminar tarea");
+    let mut input = String::new();
+
+    print!("Ingrese el id de la tarea que desea eliminar: ");
+    io::stdout().flush().unwrap();
+
+    io::stdin().read_line(&mut input).unwrap();
+
+    let index = input.trim().parse::<usize>().unwrap();
+
+    if index >= tasks.len() {
+        println!("ID invalido");
+    } else {
+        tasks.remove(index);
+        println!("Tarea eliminada correctamente");
+    }
 
 }
 

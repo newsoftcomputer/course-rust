@@ -74,7 +74,7 @@ fn english_language() {
         match action.as_ref() {
             "1" => list_tasks_english(&tasks),
             "2" => add_task_english(&mut tasks),
-            "3" => edit_task_english(),
+            "3" => edit_task_english(&mut tasks),
             "4" => remove_task_english(&mut tasks),
             "5" => check_task_english(&mut tasks),
             "0" => main(),
@@ -116,7 +116,7 @@ fn add_task_english(tasks: &mut Vec<String>) {
 
 }
 
-fn edit_task_english() {
+fn edit_task_english(tasks: &mut Vec<String>) {
 
     println!("{}", "Task edit successfully".fg(green()));
 

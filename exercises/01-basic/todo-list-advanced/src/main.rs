@@ -57,6 +57,7 @@ fn english_language() {
         println!("2: Add Task");
         println!("3: Edit Task");
         println!("4: Remove Task");
+        println!("5: Cheked Task");
         println!("{}", "0: Back".fg(orange()));
 
         println!("");
@@ -75,6 +76,7 @@ fn english_language() {
             "2" => add_task_english(&mut tasks),
             "3" => edit_task_english(),
             "4" => remove_task_english(&mut tasks),
+            "5" => check_task_english(&mut tasks),
             "0" => main(),
             _ => println!("{}", "Invalid option".fg(red()))
         }
@@ -141,6 +143,14 @@ fn remove_task_english(tasks: &mut Vec<String>) {
 
 }
 
+fn check_task_english(tasks: &mut Vec<String>) {
+
+    println!("Enter the task ID to check");
+
+}
+
+
+
 
 /* TODO LIST ADVANCED - SPANISH */
 fn spanish_language() {
@@ -161,6 +171,7 @@ fn spanish_language() {
         println!("2: Agregar tarea");
         println!("3: Editar tarea");
         println!("4: Eliminar tarea");
+        println!("5: Chequear tarea");
         println!("{}", "0: Atras".fg(orange()));
 
         println!("");
@@ -177,6 +188,7 @@ fn spanish_language() {
             "2" => add_task_spanish(&mut tasks),
             "3" => edit_task_spanish(&mut tasks),
             "4" => remove_task_spanish(&mut tasks),
+            "5" => check_task_spanish(&mut tasks),
             "0" => main(),
             _ => println!("{}", "Opcion invalida".fg(red())) 
         }
@@ -264,6 +276,12 @@ fn remove_task_spanish(tasks: &mut Vec<String>) {
         tasks.remove(index);
         println!("{}", "Tarea eliminada correctamente".fg(green()));
     }
+
+}
+
+fn check_task_spanish(tasks: &mut Vec<String>) {
+
+    println!("Ingrese el ID de la tarea que desea chequear");
 
 }
 

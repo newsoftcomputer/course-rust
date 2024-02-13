@@ -9,11 +9,11 @@ struct Usuario {
     active: bool
 }
 
+
 fn main() {
-    let user1 = build_user(String::from("andresganc"), String::from("andresganc"));
+    let user1 = build_user(String::from("andresganc"), String::from("andresganc@gmail.com"));
     println!("{:?}", user1);
 }
-
 
 
 fn build_user(user: String, email: String) -> Usuario {

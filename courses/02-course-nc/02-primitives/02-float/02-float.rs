@@ -1,7 +1,8 @@
 
 fn main() {
-    let number_64 = 4.0;      // compiler infers the value to use the default type f64
+    let number = 4.0;      // compiler infers the value to use the default type f64
     let number_32: f32 = 5.0; // type f32 specified via annotation
+    let number_64: f64 = 3.0; // type f64 specified via casting
 
-    println!("Float 64Bits: {}, Float 32Bits: {}", number_64, number_32);    
+    println!("Float infere to 64Bits: {}, Float 32Bits: {}, Float 64Bits: ", number, number_32, number_64);    
 }

@@ -18,3 +18,15 @@
         Instalar esto
 
         $ sudo apt install build-essential
+
+
+## Compiler
+
+    $ rustc hello-world.rs
+
+
+## Execute
+
+    - Execute file compiled
+
+    $ ./hello-world

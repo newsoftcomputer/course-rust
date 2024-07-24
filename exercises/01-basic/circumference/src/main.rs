@@ -23,16 +23,14 @@ fn main() {
     loop {
 
         let stdin = io::stdin();
-        let action = stdin.lock().lines().next().unwrap().unwrap();
+        let action: &str | i32 = stdin.lock().lines().next().unwrap().unwrap();
 
-        match action.as_ref() {
-            "10" => circle(&action),
-            "1" => examples(),
-            "0" => break,
+        match action {
+            10..=9999 => circle(action),
+            "e" => examples(),
+            "x" => break,
             _ => println!("{}", "Invalid option".fg(red()))
         }
-
-        
 
     }
 
@@ -40,14 +38,15 @@ fn main() {
 
 
 fn examples() {
-
-    println!("Ok values: 5, 10.0, 5.8");
-    println!("Invalid values: 5mm, 5,7");
-
+    println!("");
+    println!("Values Ok: 5, 10.0, 5.8");
+    println!("Values Invalid : 5mm, 5,7");
+    println!("");
+    main();
 }
 
 
-fn circle(action: &Vec<String>) {
+fn circle(action: String) {
 
     println!("");
     print!("{}", "Radio added: ".fg(cyan_blue()));
@@ -59,5 +58,6 @@ fn circle(action: &Vec<String>) {
 
     print!("{}", "The length of circumferencia is: ".fg(cyan_blue())); 
     println!("{}", circumference.fg(green())); 
+
 }
 

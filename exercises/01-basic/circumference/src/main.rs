@@ -23,12 +23,12 @@ fn main() {
     loop {
 
         let stdin = io::stdin();
-        let action: &str | i32 = stdin.lock().lines().next().unwrap().unwrap();
+        let action = stdin.lock().lines().next().unwrap().unwrap();
 
         match action {
             10..=9999 => circle(action),
-            "e" => examples(),
-            "x" => break,
+            1 => examples(),
+            0 => break,
             _ => println!("{}", "Invalid option".fg(red()))
         }
 
@@ -46,14 +46,14 @@ fn examples() {
 }
 
 
-fn circle(action: String) {
+fn circle(action: i32) {
 
     println!("");
     print!("{}", "Radio added: ".fg(cyan_blue()));
     println!("{}", action);
 
     const PI: f32 = 3.141592;
-    let radio: f32 = action.parse().unwrap();
+    let radio: f32 = action as f32; // = action.parse().unwrap();
     let circumference: f32 = 2.0 * PI * radio;
 
     print!("{}", "The length of circumferencia is: ".fg(cyan_blue())); 

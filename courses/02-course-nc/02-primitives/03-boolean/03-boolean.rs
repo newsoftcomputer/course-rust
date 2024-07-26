@@ -2,7 +2,7 @@
 fn main() {
     let status1: bool;
     let status2: bool = false;
-    let status3 = false;
+    let status3 = true;
 
     status1 = false;
 

@@ -1,7 +1,7 @@
 
 fn main() {
     
-    let float = 4.0;      // compiler infers the value to use the default type f64
+    let float_infe = 4.0;      // compiler infers the value to use the default type f64
     let float_32: f32 = 5.0; // type f32 specified via annotation
     let float_64: f64 = 3.0; // type f64 specified via casting
     

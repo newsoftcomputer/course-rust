@@ -23,7 +23,7 @@ fn main() {
     loop {
 
         let stdin = io::stdin();
-        let action = stdin.lock().lines().next().unwrap().unwrap();
+        let action: i32 = 0; // = stdin.lock().lines().next().unwrap().unwrap();
 
         match action {
             10..=9999 => circle(action),

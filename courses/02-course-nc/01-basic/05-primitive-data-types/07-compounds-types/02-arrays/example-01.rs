@@ -2,6 +2,7 @@
 use std::io;
 
 fn main() {
+
     let a = [1, 2, 3, 4, 5];
 
     println!("Please enter an array index.");
@@ -20,4 +21,5 @@ fn main() {
     let element = a[index];
 
     println!("The value of the element at index {index} is: {element}");
+    
 }

@@ -1,10 +1,10 @@
 
 fn main() {
 
-    // Declaracion 1
+    // Sintaxis 1
     let mut vec = Vec::new();
 
-    // Declaracion 2
+    // Sintaxis 2
     let v: Vec<u32> = vec![1, 2, 3];
 
 

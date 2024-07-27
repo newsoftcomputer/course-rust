@@ -10,4 +10,9 @@ fn main() {
     a = 2;
     println!("the value of a is : {a}");
 
+
+    let mut num1: u8 = 5;
+    let mut num2: i16 = 456;
+    let mut status: bool = false;
+
 }

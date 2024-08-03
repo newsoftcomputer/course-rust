@@ -13,6 +13,30 @@
     - The Rust and WebAssembly experience is riding the Rust release trains to stable! That means we don't require any experimental feature flags. However, we do require Rust 1.30 or newer.
 
 
+## Wasm Pack
+
+    - wasm-pack is your one-stop shop for building, testing, and publishing Rust-generated WebAssembly.
+
+    Get wasm-pack here!
+        https://rustwasm.github.io/wasm-pack/installer/
+
+
+    1. curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh    
+
+
+    2.1 
+        
+        $ cargo install wasm-pack
+
+    or 
+
+    2.2 
+        $ npm install -g wasm-pack 
+        
+        or
+        
+        $ yarn global add wasm-pack
+
 
 ## Cargo Generate
 

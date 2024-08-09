@@ -1,0 +1,8 @@
+[package]
+name = "api-rest-rocket-sqlite-01"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rocket = "0.5.1"
+rusqlite = "0.32.1"

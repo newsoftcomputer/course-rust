@@ -1,62 +1,44 @@
 
 #[macro_use] extern crate rocket;
-use rusqlite::{params, Connection, Result};
 
-// Structs
-#[derive(Debug)]
-struct Person {
-    id: i32,
-    name: String,
-    data: Option<Vec<u8>>,
+// HOME
+#[get("/")]
+fn index() -> &'static str {
+    "Home"
 }
 
 
+// PROFILES
+#[get("/profile")]
+fn get_profile() -> &'static str {
+    "Get Profile"
+}
+
+
+// USERS
 #[get("/")]
-fn index() -> &'static str {
-    "Hello World!"
+fn get_users() -> &'static str {
+    "Get Users: Geting users"
+}
+
+#[post("/")]
+fn post_users() -> &'static str {
+    "Post Users: Creating users"
+}
+
+#[put("/")]
+fn put_users() -> &'static str {
+    "Put Users: Update users"
+}
+
+#[delete("/")]
+fn delete_users() -> &'static str {
+    "Delete Users: Deleting users"
 }
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index])
+    rocket::build().mount("/", routes![index, get_profile])
+    .mount("/users", routes![get_users, post_users, put_users, delete_users])
 }
 
-fn createdb() -> Result<()> {
-
-    let conn = Connection::open_in_memory()?;
-
-    conn.execute(
-        "CREATE TABLE person (
-            id INTEGER KEY,
-            name TEXT NOT NULL,
-            data BLOB
-            )", 
-        (),
-    )?;
-
-    let me = Person {
-        id: 0,
-        name: "Andres".to_string(),
-        data: None,
-    };
-
-    conn.execute(
-        "INSERT INTO person (name, data) VALUES (?1, ?2)", 
-        (&me.name, &me.data),
-    )?;
-
-    let mut stmt = conn.prepare("SELECT id, name, data FROM person")?;
-    let person_iter = stmt.query_map([], |row| {
-        Ok(Person {
-            id: row.get(0)?,
-            name: row.get(1)?,
-            data: row.get(2)?,
-        })
-    })?;
-
-    for person in person_iter {
-        println!("Found person {:?}", person.unwrap());
-    }
-    Ok(())
-
-}

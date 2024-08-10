@@ -1,10 +1,16 @@
 
 #[macro_use] extern crate rocket;
+use rocket_dyn_templates::{Template, context};
 
 // HOME
+// #[get("/")]
+// fn index() -> &'static str {
+//     "Home"
+// }
+
 #[get("/")]
-fn index() -> &'static str {
-    "Home"
+fn index() -> Template {
+    Template::render("index", context! { title: "Rocket SQLite"})
 }
 
 
@@ -38,7 +44,9 @@ fn delete_users() -> &'static str {
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index, get_profile])
-    .mount("/users", routes![get_users, post_users, put_users, delete_users])
+
+    rocket::build().attach(Template::fairing())
+    // rocket::build().mount("/", routes![index, get_profile])
+    // .mount("/users", routes![get_users, post_users, put_users, delete_users])
 }
 

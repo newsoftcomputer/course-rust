@@ -44,9 +44,8 @@ fn delete_users() -> &'static str {
 
 #[launch]
 fn rocket() -> _ {
-
-    rocket::build().attach(Template::fairing())
-    // rocket::build().mount("/", routes![index, get_profile])
-    // .mount("/users", routes![get_users, post_users, put_users, delete_users])
+    rocket::build().mount("/", routes![index, get_profile])
+    .mount("/users", routes![get_users, post_users, put_users, delete_users])
+    .attach(Template::fairing())
 }
 

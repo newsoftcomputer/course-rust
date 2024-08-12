@@ -1,6 +1,12 @@
 
 #[macro_use] extern crate rocket;
 use rocket_dyn_templates::{Template, context};
+use rocket::serde::{Serialize, json::Json};
+
+// STRUCTS
+#[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
+struct Task { /* .. */ }
 
 // HOME
 // #[get("/")]
@@ -18,6 +24,12 @@ fn index() -> Template {
 #[get("/profile")]
 fn get_profile() -> &'static str {
     "Get Profile"
+}
+
+// TODO
+#[get("/todo")]
+fn todo() -> Json<Task> {
+    Json(Task { /* .. */ })
 }
 
 

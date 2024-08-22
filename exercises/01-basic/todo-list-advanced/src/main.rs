@@ -1,12 +1,11 @@
-
+use ansi_rgb::{blue, blue_magenta, cyan_blue, green, orange, red, Background, Foreground};
+use rgb::RGB8;
 use std::io;
 use std::io::BufRead;
 use std::io::Write;
-use ansi_rgb::{ Foreground, Background, blue, green, red, orange, cyan_blue, blue_magenta };
-use rgb::RGB8;
-
 
 fn main() {
+    let mut val1: u16 = 5;
 
     println!("");
     println!("{}", "TODO LIST ADVANCED".bg(cyan_blue()));
@@ -18,7 +17,6 @@ fn main() {
     io::stdout().flush().unwrap();
 
     loop {
-        
         let stdin = io::stdin();
         let action = stdin.lock().lines().next().unwrap().unwrap();
 
@@ -30,17 +28,14 @@ fn main() {
             "1" => english_language(),
             "2" => spanish_language(),
             "0" => break,
-            _ => println!("{}", "Invalid option".fg(red()))
+            _ => println!("{}", "Invalid option".fg(red())),
         }
-
     }
 }
-
 
 /* TODO LIST ADVANCED - ENGLISH */
 
 fn english_language() {
-
     let mut tasks: Vec<String> = vec![String::new(); 0];
 
     // Colors
@@ -50,7 +45,6 @@ fn english_language() {
     println!("");
 
     loop {
-        
         println!("");
         println!("{}", "TODO LIST ADVANCED - ENGLISH".fg(blue()));
         println!("1: List Tasks");
@@ -78,15 +72,12 @@ fn english_language() {
             "4" => remove_task_english(&mut tasks),
             "5" => check_task_english(&mut tasks),
             "0" => main(),
-            _ => println!("{}", "Invalid option".fg(red()))
+            _ => println!("{}", "Invalid option".fg(red())),
         }
-
     }
-
 }
 
 fn list_tasks_english(tasks: &Vec<String>) {
-
     println!("");
 
     for task in tasks {
@@ -96,11 +87,9 @@ fn list_tasks_english(tasks: &Vec<String>) {
     println!("");
 
     println!("{}", "Listed Tasks".fg(green()));
-
 }
 
 fn add_task_english(tasks: &mut Vec<String>) {
-
     let mut input = String::new();
 
     println!("");
@@ -109,21 +98,17 @@ fn add_task_english(tasks: &mut Vec<String>) {
 
     io::stdin().read_line(&mut input).unwrap();
     let task = input.trim().to_string();
-    
-    tasks.push(task);
-    
-    println!("{}", "Task added successfully".fg(green()));
 
+    tasks.push(task);
+
+    println!("{}", "Task added successfully".fg(green()));
 }
 
 fn edit_task_english(tasks: &mut Vec<String>) {
-
     println!("{}", "Task edit successfully".fg(green()));
-
 }
 
 fn remove_task_english(tasks: &mut Vec<String>) {
-
     let mut input = String::new();
 
     println!("");
@@ -139,22 +124,15 @@ fn remove_task_english(tasks: &mut Vec<String>) {
     } else {
         tasks.remove(index);
         println!("{}", "Task removed successfully".fg(green()));
-    }   
-
+    }
 }
 
 fn check_task_english(tasks: &mut Vec<String>) {
-
     println!("Enter the task ID to check");
-
 }
-
-
-
 
 /* TODO LIST ADVANCED - SPANISH */
 fn spanish_language() {
-
     let mut tasks: Vec<String> = vec![String::new(); 0];
 
     // Colors
@@ -164,7 +142,6 @@ fn spanish_language() {
     println!("{}", "Lenguaje español seleccionado".fg(_gray700));
 
     loop {
-
         println!("");
         println!("{}", "TODO LIST AVANZADO - ESPAÑOL".fg(blue()));
         println!("1: Listar tareas");
@@ -190,15 +167,12 @@ fn spanish_language() {
             "4" => remove_task_spanish(&mut tasks),
             "5" => check_task_spanish(&mut tasks),
             "0" => main(),
-            _ => println!("{}", "Opcion invalida".fg(red())) 
+            _ => println!("{}", "Opcion invalida".fg(red())),
         }
-
     }
-
 }
 
 fn list_tasks_spanish(tasks: &Vec<String>) {
-
     println!("");
 
     for task in tasks {
@@ -208,11 +182,9 @@ fn list_tasks_spanish(tasks: &Vec<String>) {
     println!("");
 
     println!("{}", "Tareas listadas correctamente".fg(green()));
-
 }
 
 fn add_task_spanish(tasks: &mut Vec<String>) {
-
     let mut input = String::new();
 
     println!("");
@@ -226,11 +198,9 @@ fn add_task_spanish(tasks: &mut Vec<String>) {
     tasks.push(task);
 
     println!("{}", "Tarea agregada correctamente".fg(green()));
-
 }
 
 fn edit_task_spanish(tasks: &mut Vec<String>) {
-
     let mut input = String::new();
 
     println!("");
@@ -240,7 +210,7 @@ fn edit_task_spanish(tasks: &mut Vec<String>) {
     io::stdin().read_line(&mut input).unwrap();
 
     let index = input.trim().parse::<usize>().unwrap();
-    
+
     println!("La tarea selecciona es: {}", tasks[index]);
 
     let mut input_new = String::new();
@@ -255,11 +225,9 @@ fn edit_task_spanish(tasks: &mut Vec<String>) {
     // tasks.pu
 
     println!("{}", "Tarea editada correctamente".fg(green()));
-
 }
 
 fn remove_task_spanish(tasks: &mut Vec<String>) {
-
     let mut input = String::new();
 
     println!("");
@@ -276,12 +244,8 @@ fn remove_task_spanish(tasks: &mut Vec<String>) {
         tasks.remove(index);
         println!("{}", "Tarea eliminada correctamente".fg(green()));
     }
-
 }
 
 fn check_task_spanish(tasks: &mut Vec<String>) {
-
     println!("Ingrese el ID de la tarea que desea chequear");
-
 }
-

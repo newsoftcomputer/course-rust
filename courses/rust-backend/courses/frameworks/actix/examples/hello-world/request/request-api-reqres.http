@@ -34,9 +34,14 @@
 
 # PATCH
 # Update user (Patch)
-PATCH https://reqres.in/api/users/2
+#PATCH https://reqres.in/api/users/2
 
-{
-    "name": "morpheus",
-    "job": "zion resident"
-}
+#{
+#    "name": "morpheus",
+#    "job": "zion resident"
+#}
+
+
+
+# DELETE
+DELETE https://reqres.in/api/users/2

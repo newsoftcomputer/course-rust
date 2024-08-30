@@ -1,5 +1,14 @@
 
-
+# Service: hello - Route: / - Methods: GET,
 GET http://127.0.0.1:8080/
+# Accept: application/json
 
-Accept: application/json
+
+# Service: echo - Route: /echo - Methods: POST,
+# POST http://127.0.0.1:8080/echo
+
+
+# Route: /hello - Methods: GET
+# GET http://127.0.0.1:8080/hello
+
+

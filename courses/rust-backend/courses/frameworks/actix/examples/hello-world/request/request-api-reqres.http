@@ -1,14 +1,17 @@
 
+# GETS
 
-# Get all users
+# Show all users (Get)
 # GET https://reqres.in/api/users?page=2
 
-
-# Get user
+# Show a user (Get)
 #GET https://reqres.in/api/users/2
 
 
-# Create user
+
+# POSTS
+
+# Create user (Post)
 #POST https://reqres.in/api/users
 
 #{
@@ -17,13 +20,23 @@
 #}
 
 
-# Update user
-PUT https://reqres.in/api/users/2
+
+#PUTS
+
+# Update user (Put)
+#PUT https://reqres.in/api/users/2
+
+#{
+#    "name": "morpheus",
+#    "job": "zion resident"
+#}
+
+
+# PATCH
+# Update user (Patch)
+PATCH https://reqres.in/api/users/2
 
 {
     "name": "morpheus",
     "job": "zion resident"
 }
-
-
-# Delete user

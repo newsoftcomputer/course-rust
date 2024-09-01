@@ -2,7 +2,7 @@
 # GETS
 
 # Show all users (Get)
- GET https://reqres.in/api/users?page=2
+# GET https://reqres.in/api/users?page=2
 
 # Show a user (Get)
 #GET https://reqres.in/api/users/2

@@ -5,6 +5,8 @@
 
 ## Prerequisitos
 
+- Install dev tools from SQLite, MySQL, PostgreSQL
+
 ### SQLite
 
 - SQLite Dev Tools
@@ -32,3 +34,9 @@
 - Diesel Binary
 
     $ cargo binstall diesel_cli
+
+## Diesel Status
+
+- Check diesel status
+
+  $ diesel -- version

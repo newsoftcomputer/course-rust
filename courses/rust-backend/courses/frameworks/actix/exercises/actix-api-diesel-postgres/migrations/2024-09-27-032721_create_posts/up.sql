@@ -1,28 +1,28 @@
 -- Your SQL goes here
 
 
-CREATE TABLE public."users" (
-  id_users PRIMARY KEY NOT NULL,
-  firstname VARCHAR,
-  lastname VARCHAR,
-  email VARCHAR,
-  status BOOLEAN NOT NULL DEFAULT FALSE
+CREATE TABLE users (
+    id_users SERIAL PRIMARY KEY,
+    fisrt_name VARCHAR,
+    lastname VARCHAR,
+    email VARCHAR,
+    status BOOLEAN NOT NULL DEFAULT FALSE
 )
 
-TABLESPACE pg_default;
+-- TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public."users"
-  OWNER to andresgiraldo;
+ALTER TABLE IF EXISTS users
+  OWNER to postgres;
 
 
-CREATE TABLE public."posts" (
-  id SERIAL PRIMARY KEY,
-  title VARCHAR NOT NULL,
-  body TEXT NOT NULL,
+CREATE TABLE posts (
+  id_posts SERIAL PRIMARY KEY,
+  title VARCHAR,
+  body TEXT,
   published BOOLEAN NOT NULL DEFAULT FALSE
 )
 
-TABLESPACE pg_default;
+-- TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public."posts"
-    OWNER to andresgiraldo;
+ALTER TABLE IF EXISTS posts
+    OWNER to postgres;

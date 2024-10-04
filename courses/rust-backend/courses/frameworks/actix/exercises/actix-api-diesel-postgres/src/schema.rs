@@ -13,7 +13,7 @@ diesel::table! {
     users (id_users) {
         id_users -> Int4,
         fisrt_name -> Nullable<Varchar>,
-        lastname -> Nullable<Varchar>,
+        last_name -> Nullable<Varchar>,
         email -> Nullable<Varchar>,
         status -> Bool,
     }

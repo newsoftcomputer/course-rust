@@ -46,5 +46,20 @@ impl ModelUsers {
         all_users
     }
 
-    pub fn new_user(conn: &mut PgConnection) {}
+    pub fn new_user(
+        conn: &mut PgConnection,
+        user: &StructHandlerUsers,
+    ) -> Result<StructUsers, diesel::result::Error> {
+        let new_user = StructNewUsers {
+            id_users: &user.id_users,
+            fisrt_name: &user.fisrt_name,
+            last_name: &user.last_name,
+            email: &user.email,
+            status: &user.status,
+        };
+
+        diesel::inser_into(users::table)
+            .values(new_users)
+            .get_result::<StructUsers>(conn)
+    }
 }

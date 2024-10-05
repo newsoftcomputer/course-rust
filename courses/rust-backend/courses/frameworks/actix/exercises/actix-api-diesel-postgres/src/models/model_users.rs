@@ -11,7 +11,7 @@ use super::super::schema::users::dsl::*;
 
 // Struct model
 #[derive(Queryable, Debug, Deserialize, Serialize)]
-pub struct StructUsers {
+pub struct ModelUsers {
     pub id_users: u8,
     pub fisrt_name: String,
     pub last_name: String,
@@ -41,7 +41,7 @@ pub struct StructHandlerUsers {
 
 // MODELS
 impl ModelUsers {
-    pub fn get_users(conn: &mut PgConnection) -> Result<Vec<StructUsers>, diesel::result::Error> {
+    pub fn get_users(conn: &mut PgConnection) -> Result<Vec<ModelUsers>, diesel::result::Error> {
         let all_users = users.load::<StructUsers>(conn);
         all_users
     }
@@ -49,7 +49,7 @@ impl ModelUsers {
     pub fn new_user(
         conn: &mut PgConnection,
         user: &StructHandlerUsers,
-    ) -> Result<StructUsers, diesel::result::Error> {
+    ) -> Result<ModelUsers, diesel::result::Error> {
         let new_user = StructNewUsers {
             id_users: &user.id_users,
             fisrt_name: &user.fisrt_name,
@@ -60,6 +60,6 @@ impl ModelUsers {
 
         diesel::inser_into(users::table)
             .values(new_users)
-            .get_result::<StructUsers>(conn)
+            .get_result::<ModelUsers>(conn)
     }
 }

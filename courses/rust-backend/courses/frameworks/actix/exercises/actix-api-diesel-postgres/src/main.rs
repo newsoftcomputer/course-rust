@@ -6,6 +6,11 @@ use diesel::r2d2::Pool;
 use dotenvy::dotenv;
 use std::env;
 
+// imports
+mod models;
+mod schema;
+mod services;
+
 #[get("/")]
 async fn hello() -> impl Responder {
     HttpResponse::Ok().body("Hello world!")
@@ -33,6 +38,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .service(hello)
             .service(echo)
+            .service(services::service_users::get_users)
             .route("/hey", web::get().to(manual_hello))
     })
     .bind(("127.0.0.1", 8080))?

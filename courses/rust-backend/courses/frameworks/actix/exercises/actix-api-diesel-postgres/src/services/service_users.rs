@@ -1,5 +1,31 @@
-use actix_web::{post, get, web, HttpResponse, Responder};
-use diesel::{r2d2::{self, ConnectionManager}, PgConnection};
+use actix_web::{get, post, web, HttpResponse, Responder};
+use diesel::{
+    r2d2::{self, ConnectionManager},
+    PgConnection,
+};
 use serde_json::json;
 
-use crate::models::model-users::{StructHandlerUsers, ModelUsers};
+use crate::models::model_users::{ModelUsers, StructHandlerUsers};
+
+#[post("/service/users/newuser")]
+pub async fn new_user(
+    pool: web::Data<r2d2::Pool<ConnectionManager<PgConnection>>>,
+    item: web::Json<StructHandlerUsers>,
+) {
+}
+
+#[get("/services/users/getusers")]
+pub async fn get_users(
+    pool: web::Data<r2d2::Pool<ConnectionManager<PgConnection>>>,
+) -> impl Responder {
+    let mut conn = pool.get().expect("Connection error");
+
+    match web::block(move || ModelUsers::get_users(&mut conn)).await {
+        ok(data) => {
+            let data = data.unwrap();
+            HttpResponse::ok().json(json!(data))
+        }
+
+        Err(err) => HttpResponse::ok().body(err.to_string()),
+    }
+}

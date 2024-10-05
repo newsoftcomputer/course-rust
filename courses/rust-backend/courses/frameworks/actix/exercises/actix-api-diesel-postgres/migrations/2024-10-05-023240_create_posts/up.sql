@@ -1,8 +1,7 @@
 -- Your SQL goes here
 
-
 CREATE TABLE users (
-    id_users uuid NOT NULL,
+    id_users UUID NOT NULL,
     first_name VARCHAR,
     last_name VARCHAR,
     email VARCHAR,
@@ -16,7 +15,7 @@ ALTER TABLE IF EXISTS users
 
 
 CREATE TABLE posts (
-  id_posts SERIAL NOT NULL ,
+  id_posts SERIAL NOT NULL,
   title VARCHAR,
   body TEXT,
   published BOOLEAN NOT NULL DEFAULT FALSE

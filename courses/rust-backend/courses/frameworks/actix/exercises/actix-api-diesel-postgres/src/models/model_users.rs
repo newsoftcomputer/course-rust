@@ -1,5 +1,6 @@
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
+use diesel::sql_types::Bool;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
@@ -12,37 +13,37 @@ use super::super::schema::users::dsl::*;
 // Struct model
 #[derive(Queryable, Debug, Deserialize, Serialize)]
 pub struct ModelUsers {
-    pub id_users: u8,
-    pub fisrt_name: String,
+    pub id_users: Uuid,
+    pub first_name: String,
     pub last_name: String,
     pub email: String,
-    pub status: Boolean,
+    pub status: bool,
 }
 
 // Struct model insertable
 #[derive(Insertable, Debug)]
 #[diesel(table_name = users)]
 pub struct StructNewUsers<'a> {
-    pub id_users: &'a u8,
-    pub fisrt_name: &'a String,
+    pub id_users: &'a Uuid,
+    pub first_name: &'a String,
     pub last_name: &'a String,
     pub email: &'a String,
-    pub status: &'a Boolean,
+    pub status: &'a bool,
 }
 
 // Struct model handler
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct StructHandlerUsers {
-    pub fisrt_name: String,
+    pub first_name: String,
     pub last_name: String,
     pub email: String,
-    pub status: Boolean,
+    pub status: bool,
 }
 
 // MODELS
 impl ModelUsers {
     pub fn get_users(conn: &mut PgConnection) -> Result<Vec<ModelUsers>, diesel::result::Error> {
-        let all_users = users.load::<StructUsers>(conn);
+        let all_users = users.load::<ModelUsers>(conn);
         all_users
     }
 
@@ -51,7 +52,7 @@ impl ModelUsers {
         user: &StructHandlerUsers,
     ) -> Result<ModelUsers, diesel::result::Error> {
         let new_user = StructNewUsers {
-            id_users: &user.id_users,
+            id_users: &Uuid::new_v4(),
             fisrt_name: &user.fisrt_name,
             last_name: &user.last_name,
             email: &user.email,
@@ -59,7 +60,7 @@ impl ModelUsers {
         };
 
         diesel::inser_into(users::table)
-            .values(new_users)
+            .values(new_user)
             .get_result::<ModelUsers>(conn)
     }
 }

@@ -14,9 +14,9 @@ use super::super::schema::users::dsl::*;
 #[derive(Queryable, Debug, Deserialize, Serialize)]
 pub struct ModelUsers {
     pub id_users: Uuid,
-    pub first_name: String,
-    pub last_name: String,
-    pub email: String,
+    pub first_name: Option<String>,
+    pub last_name: Option<String>,
+    pub email: Option<String>,
     pub status: bool,
 }
 
@@ -53,13 +53,13 @@ impl ModelUsers {
     ) -> Result<ModelUsers, diesel::result::Error> {
         let new_user = StructNewUsers {
             id_users: &Uuid::new_v4(),
-            fisrt_name: &user.fisrt_name,
+            first_name: &user.first_name,
             last_name: &user.last_name,
             email: &user.email,
             status: &user.status,
         };
 
-        diesel::inser_into(users::table)
+        diesel::insert_into(users::table)
             .values(new_user)
             .get_result::<ModelUsers>(conn)
     }

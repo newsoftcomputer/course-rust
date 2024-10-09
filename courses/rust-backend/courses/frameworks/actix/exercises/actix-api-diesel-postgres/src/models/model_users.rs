@@ -1,6 +1,5 @@
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
-use diesel::sql_types::Bool;
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 

@@ -7,12 +7,20 @@ use serde_json::json;
 
 use crate::models::model_users::{ModelUsers, StructHandlerUsers};
 
-// #[post("/service/users/newuser")]
-// pub async fn new_user(
-//     pool: web::Data<r2d2::Pool<ConnectionManager<PgConnection>>>,
-//     item: web::Json<StructHandlerUsers>,
-// ) {
-// }
+#[post("/services/users/newuser")]
+pub async fn new_user(
+    pool: web::Data<r2d2::Pool<ConnectionManager<PgConnection>>>,
+    item: web::Json<StructHandlerUsers>,
+) {
+    let mut conn = pool.get().expect("Error to connect");
+    match web::block(move || ModelUsers::new_user(&mut conn, &item)).await {
+        Ok(data) => {
+            let data = data.unwrap();
+            HttpResponse::Ok().json(json!(data))
+        }
+        Err(err) => HttpResponse::Ok().body(err.to_string()),
+    }
+}
 
 #[get("/services/users/getusers")]
 pub async fn get_users(

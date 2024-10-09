@@ -8,10 +8,14 @@
 # Type: Service
 # Route: /services/users/getusers
 # Notes: Get all users
-GET http://localhost:8080/services/users/getusers
+# GET http://localhost:8080/services/users/getusers
 
 
 # ==== POSTS ====
+# Name: postuser
+# Type: Service
+# Route: /services/users/postuser
+# Notes: Create new user
 
 # ==== PUTS ====
 

@@ -16,13 +16,13 @@
 # Type: Service
 # Route: /services/users/postuser
 # Notes: Create new user
- POST http://localhost:8080/services/users/newuser
+POST http://localhost:8080/services/users/newuser
 
  {
-    "first_name": "Daniela",
-    "last_name": "Giraldo Torres",
-    "email": "mipeluche2003@gmail.com",
-    "status": "true"
+    "first_name": "Mariana",
+    "last_name": "Giraldo Gomez",
+    "email": "marianamarinparra@gmail.com",
+    "status": true
   }
 
 # ==== PUTS ====

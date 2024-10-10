@@ -8,7 +8,7 @@
 # Type: Service
 # Route: /services/users/getusers
 # Notes: Get all users
- GET http://localhost:8080/services/users/getusers
+# GET http://localhost:8080/services/users/getusers
 
 
 # ==== POSTS ====
@@ -16,6 +16,14 @@
 # Type: Service
 # Route: /services/users/postuser
 # Notes: Create new user
+ POST http://localhost:8080/services/users/newuser
+
+ {
+    "first_name": "Daniela",
+    "last_name": "Giraldo Torres",
+    "email": "mipeluche2003@gmail.com",
+    "status": "true"
+  }
 
 # ==== PUTS ====
 

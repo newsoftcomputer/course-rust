@@ -8,7 +8,7 @@
 # Type: Service
 # Route: /services/users/getusers
 # Notes: Get all users
-# GET http://localhost:8080/services/users/getusers
+ GET http://localhost:8080/services/users/getusers
 
 
 # ==== POSTS ====
@@ -17,11 +17,14 @@
 # Route: /services/users/postuser
 # Notes: Create new user
 POST http://localhost:8080/services/users/newuser
+#POST {{URL}}/services/users/newuser
+Content-Type: application/json
+# Authorization: Bearer {{TOKEN}}
 
  {
-    "first_name": "Mariana",
+    "first_name": "Marco",
     "last_name": "Giraldo Gomez",
-    "email": "marianamarinparra@gmail.com",
+    "email": "marcogiraldot21@gmail.com",
     "status": true
   }
 

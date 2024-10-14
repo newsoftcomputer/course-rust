@@ -43,10 +43,18 @@ fn Home() -> Element {
             },
             "Go to blog"
         }
+
         div {
-            h1 { "High-Five counter: {count}" }
-            button { onclick: move |_| count += 1, "Up high!" }
-            button { onclick: move |_| count -= 1, "Down low!" }
+            h1 {color: "blue", "COUNTER - RUST - DIOXUS"}
+        }
+        div {
+            h2 { "High-Five counter: {count}" }
+            button {
+                padding_top: "5px", padding_right: "8px", padding_bottom: "5px", padding_left: "8px",
+                border_radius: "8px",
+                onclick: move |_| count += 1, "+"
+            }
+            button { onclick: move |_| count -= 1, "-" }
         }
     }
 }

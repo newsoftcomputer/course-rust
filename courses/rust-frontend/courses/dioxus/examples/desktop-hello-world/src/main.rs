@@ -45,10 +45,14 @@ fn Home() -> Element {
             },
             "Go to blog"
         }
+        div { background_color: "gray",
+            h1 {" COUNTER WITH RUST & DIOXUS ..."}
+        }
+
         div {
-            h1 { "High-Five counter: {count}" }
-            button { onclick: move |_| count += 1, "Up high!" }
-            button { onclick: move |_| count -= 1, "Down low!" }
+            h2 { "High-Five counter: {count}" }
+            button { onclick: move |_| count += 1, "+" }
+            button { onclick: move |_| count -= 1, "-" }
         }
     }
 }

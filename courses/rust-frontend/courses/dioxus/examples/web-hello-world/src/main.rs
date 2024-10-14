@@ -15,11 +15,9 @@ fn main() {
     // Init logger
     dioxus_logger::init(Level::INFO).expect("failed to init logger");
     info!("starting app");
-
-    dioxus::launch(App);
+    launch(App);
 }
 
-#[component]
 fn App() -> Element {
     rsx! {
         Router::<Route> {}
@@ -45,14 +43,10 @@ fn Home() -> Element {
             },
             "Go to blog"
         }
-        div { background_color: "gray",
-            h1 {" COUNTER WITH RUST & DIOXUS ..."}
-        }
-
         div {
-            h2 { "High-Five counter: {count}" }
-            button { onclick: move |_| count += 2, "+" }
-            button { onclick: move |_| count -= 1, "-" }
+            h1 { "High-Five counter: {count}" }
+            button { onclick: move |_| count += 1, "Up high!" }
+            button { onclick: move |_| count -= 1, "Down low!" }
         }
     }
 }

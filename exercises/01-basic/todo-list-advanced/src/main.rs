@@ -5,8 +5,6 @@ use std::io::BufRead;
 use std::io::Write;
 
 fn main() {
-    let mut val1: u16 = 5;
-
     println!("");
     println!("{}", "TODO LIST ADVANCED".bg(cyan_blue()));
     println!("1: English");

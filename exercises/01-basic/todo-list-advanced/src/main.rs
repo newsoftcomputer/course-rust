@@ -5,7 +5,6 @@ use std::io::BufRead;
 use std::io::Write;
 
 fn main() {
-    println!("");
     println!("{}", "TODO LIST ADVANCED".bg(cyan_blue()));
     println!("1: English");
     println!("2: Spanish");
@@ -43,7 +42,6 @@ fn english_language() {
     println!("");
 
     loop {
-        println!("");
         println!("{}", "TODO LIST ADVANCED - ENGLISH".fg(blue()));
         println!("1: List Tasks");
         println!("2: Add Task");
@@ -52,7 +50,6 @@ fn english_language() {
         println!("5: Cheked Task");
         println!("{}", "0: Back".fg(orange()));
 
-        println!("");
         print!("Select a options: ");
         io::stdout().flush().unwrap();
 
@@ -82,15 +79,12 @@ fn list_tasks_english(tasks: &Vec<String>) {
         println!("- {}", task.fg(blue_magenta()));
     }
 
-    println!("");
-
     println!("{}", "Listed Tasks".fg(green()));
 }
 
 fn add_task_english(tasks: &mut Vec<String>) {
     let mut input = String::new();
 
-    println!("");
     print!("Enter task: ");
     io::stdout().flush().unwrap();
 
@@ -109,7 +103,6 @@ fn edit_task_english(tasks: &mut Vec<String>) {
 fn remove_task_english(tasks: &mut Vec<String>) {
     let mut input = String::new();
 
-    println!("");
     print!("Enter task index to remove: ");
     io::stdout().flush().unwrap();
 
@@ -136,11 +129,9 @@ fn spanish_language() {
     // Colors
     let _gray700 = RGB8::new(97, 97, 97);
 
-    println!("");
     println!("{}", "Lenguaje español seleccionado".fg(_gray700));
 
     loop {
-        println!("");
         println!("{}", "TODO LIST AVANZADO - ESPAÑOL".fg(blue()));
         println!("1: Listar tareas");
         println!("2: Agregar tarea");
@@ -149,7 +140,6 @@ fn spanish_language() {
         println!("5: Chequear tarea");
         println!("{}", "0: Atras".fg(orange()));
 
-        println!("");
         print!("Elija una opcion: ");
         io::stdout().flush().unwrap();
 
@@ -171,13 +161,9 @@ fn spanish_language() {
 }
 
 fn list_tasks_spanish(tasks: &Vec<String>) {
-    println!("");
-
     for task in tasks {
         println!(" - {}", task.fg(blue_magenta()));
     }
-
-    println!("");
 
     println!("{}", "Tareas listadas correctamente".fg(green()));
 }
@@ -185,7 +171,6 @@ fn list_tasks_spanish(tasks: &Vec<String>) {
 fn add_task_spanish(tasks: &mut Vec<String>) {
     let mut input = String::new();
 
-    println!("");
     print!("Ingrese la tarea : ");
     io::stdout().flush().unwrap();
 
@@ -201,7 +186,6 @@ fn add_task_spanish(tasks: &mut Vec<String>) {
 fn edit_task_spanish(tasks: &mut Vec<String>) {
     let mut input = String::new();
 
-    println!("");
     print!("Ingrese el ID de la tarea que desea editar: ");
     io::stdout().flush().unwrap();
 
@@ -228,7 +212,6 @@ fn edit_task_spanish(tasks: &mut Vec<String>) {
 fn remove_task_spanish(tasks: &mut Vec<String>) {
     let mut input = String::new();
 
-    println!("");
     print!("Ingrese el ID de la tarea que desea eliminar: ");
     io::stdout().flush().unwrap();
 

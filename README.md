@@ -1,2 +1,3 @@
-# course-rust
-NC Course - Rust
+# COURSE RUST
+
+  - NC Course - Rust

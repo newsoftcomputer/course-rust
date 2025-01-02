@@ -1,11 +1,13 @@
 # COURSE RUST
 
-<<<<<<< HEAD
   - NC Course - Rust
-=======
-- NC Course - Rust
 
 ## TABLE OF CONTENTS
 
+### COURSES
 
->>>>>>> f6444ae37ed6243b8c60520e4ecac573a5f21216
+### EXAMPLES
+
+### EXERCISES
+
+### PROBLEMS

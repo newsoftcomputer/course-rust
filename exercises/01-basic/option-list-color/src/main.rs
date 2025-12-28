@@ -68,7 +68,7 @@ fn english() {
         }
 
         println!("");
-        println!("{}", "Please select an option:".fg(blue()));
+        println!("{}", "Please select an option: ".fg(blue()));
         
     }
 }

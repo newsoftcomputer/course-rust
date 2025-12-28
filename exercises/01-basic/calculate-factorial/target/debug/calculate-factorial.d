@@ -1,1 +1,1 @@
-/home/andres/NC/NEWSOFT-COMPUTER/COURSES/course-rust/exercises/01-basic/calculate-factorial/target/debug/calculate-factorial: /home/andres/NC/NEWSOFT-COMPUTER/COURSES/course-rust/exercises/01-basic/calculate-factorial/src/main.rs
+/home/andres/NC/NEWSOFT-COMPUTER/courses/course-rust/exercises/01-basic/calculate-factorial/target/debug/calculate-factorial: /home/andres/NC/NEWSOFT-COMPUTER/courses/course-rust/exercises/01-basic/calculate-factorial/src/main.rs

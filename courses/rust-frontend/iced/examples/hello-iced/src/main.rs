@@ -1,7 +1,8 @@
 
-use iced::{Widget::text, Element};
+use iced::widget::{button, column, text};
+use iced::Element;
 
-#[derive(Debug)]
+#[derive(Default)]
 struct AppState {
     
 }
@@ -11,7 +12,7 @@ enum Message {
     Exit,
 }
 
-fn update(state: &Appstate, message: Message) {
+fn update(state: &mut AppState, message: Message) {
 
 }
 
@@ -19,6 +20,6 @@ fn view(state: &AppState) -> Element<Message>  {
     text("Hello Iced").into()
 }
 
-fn main() {
-    iced::apli
+fn main() -> iced::Result {
+    iced::run(update, view)
 }

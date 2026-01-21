@@ -1,15 +1,15 @@
 
 use iced::{Fill, Element};
-use iced::widget::{column, container, row};
+use iced::widget::{column, container, row, text};
 
 #[derive(Debug, Clone)]
 enum Message {
-    Value,
+    Text,
 }
 
 #[derive(Default)]
 struct State {
-    //value: u64,
+    value: u16,
 }
 
 fn main() -> iced::Result {
@@ -17,10 +17,9 @@ fn main() -> iced::Result {
 }
 
 fn update(state: &mut State, message: Message) {
-    // match message {
-    //     text("Hola")
-    //     //Message::Increment => counter.value += 1,
-    // }
+    match message {
+        Message::Text => state.value += 1,
+    }
 }
 
 fn view(state: &State) -> Element<'_, Message> {
@@ -28,6 +27,7 @@ fn view(state: &State) -> Element<'_, Message> {
         column![
             "Top",
             row!["Left", "Right"].spacing(10),
+            row![text(state.value.to_string())].padding(10),
             "Bottom"
         ]
         .spacing(10)

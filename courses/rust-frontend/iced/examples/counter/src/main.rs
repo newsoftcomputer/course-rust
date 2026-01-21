@@ -1,7 +1,6 @@
 
 use iced::Element;
-use iced::widget::{button, text};
-use std::error::Error;
+use iced::widget::{button, column, text};
 
 #[derive(Debug, Clone)]
 enum Message {
@@ -24,5 +23,14 @@ fn update(counter: &mut Counter, message: Message) {
 }
 
 fn view(counter: &Counter) -> Element<'_, Message>  {
-    button(text(counter.value)).on_press(Message::Increment).into()
+    column![
+        text("Counter Application"),
+        text(counter.value).size(20),
+        button("Increment").on_press(Message::Increment),
+        text("Click the button to increment the counter:"),
+    ]
+    .spacing(10)
+    .into()
+
+    // button(text(counter.value)).on_press(Message::Increment).into()
 }
